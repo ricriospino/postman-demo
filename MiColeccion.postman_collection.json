@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "08474176-cd8b-4f3b-bb68-6b75ac9b0569",
+		"name": "MiColeccion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14964410"
+	},
+	"item": [
+		{
+			"name": "Agregando un usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json()\r",
+							"\r",
+							"pm.collectionVariables.set('userId', jsonData.id)\r",
+							"\r",
+							"pm.test('Status code 201',function(){\r",
+							"    pm.response.to.have.status(201)\r",
+							"})\r",
+							"\r",
+							"pm.test('email match'), function(){\r",
+							"    pm.expect(jsonData.email).to.be.eq\r",
+							"    ('ricriosin@gmail.com')\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ricardo\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricrios@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocolo}}://{{url}}/{{visibility}}/{{version}}/users",
+					"protocol": "{{protocolo}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{visibility}}",
+						"{{version}}",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregando un usuario",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ricardo\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricriospino@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 23:56:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"a0c03c2b014fbbe1c4ff9b4a6d3f57b3\""
+						},
+						{
+							"key": "location",
+							"value": "https://gorest.co.in/public/v2/users/3112806"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "90"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "89"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1"
+						},
+						{
+							"key": "x-request-id",
+							"value": "c40f9796-6af8-4a4d-9c4b-bcd06ce26c14"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.309294"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=kI599I5U9lQGEoV6y4c3yDcieTiFZn4xkjKYOpPWNpvwf8XwvTYmTW3mXT0lac9xe%2B8pX%2Fw%2FO3gUNCgepy7Snn%2FWjenzp3yAjjCksV3P5PTcyxx6Nkp8ItGL%2FYHxzuM%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7db030037b169546-LIM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3112806,\n    \"name\": \"Ricardo\",\n    \"email\": \"ricriospino@gmail.com\",\n    \"gender\": \"male\",\n    \"status\": \"active\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener Usuario Por Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code 200',function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocolo}}://{{url}}/{{visibility}}/{{version}}/users/{{userId}}",
+					"protocol": "{{protocolo}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{visibility}}",
+						"{{version}}",
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json()\r",
+							"\r",
+							"pm.test('Status code 200 actualizado correctamente',function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"pm.test('nombre match'), function(){\r",
+							"    pm.expect(jsonData.name).to.be.eq\r",
+							"    ('Ricardorios')\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ricardorio\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricrios@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocolo}}://{{url}}/{{visibility}}/{{version}}/users/{{userId}}",
+					"protocol": "{{protocolo}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{visibility}}",
+						"{{version}}",
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Usuario Por Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code 204',function(){\r",
+							"    pm.response.to.have.status(204)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{protocolo}}://{{url}}/{{visibility}}/{{version}}/users/{{userId}}",
+					"protocol": "{{protocolo}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{visibility}}",
+						"{{version}}",
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "65eb7ea40888ecab1b7c3f49964373ff3d2b97ab05b60bb62758c9654b31befa",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
