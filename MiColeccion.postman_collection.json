@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "08474176-cd8b-4f3b-bb68-6b75ac9b0569",
+		"_postman_id": "d4d5c3e4-555c-47cb-8df1-cc6fa5ed3ddf",
 		"name": "MiColeccion",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14964410"
@@ -16,6 +16,7 @@
 							"const jsonData = pm.response.json()\r",
 							"\r",
 							"pm.collectionVariables.set('userId', jsonData.id)\r",
+							"pm.collectionVariables.set('nombre', jsonData.name)\r",
 							"\r",
 							"pm.test('Status code 201',function(){\r",
 							"    pm.response.to.have.status(201)\r",
@@ -35,7 +36,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Ricardo\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricrios@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Ricardo\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricadona@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -256,7 +257,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Ricardorio\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricrios@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Ricardorio\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"ricadonna@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -347,6 +348,11 @@
 	"variable": [
 		{
 			"key": "userId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "nombre",
 			"value": "",
 			"type": "string"
 		}
